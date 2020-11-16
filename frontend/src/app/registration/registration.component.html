@@ -4,7 +4,7 @@
       <div class="sm-jumbotron center-align">
         <h2> Registration </h2>
       </div>
-      <form class="col s12 white" [formGroup]="registerForm" #UserRegistrationForm="ngForm" autocomplete="off" (ngSubmit)="submitForm(registerForm.value)">
+      <form class="col s12 white" class="card-content" [formGroup]="registerForm" #UserRegistrationForm="ngForm" autocomplete="off" (ngSubmit)="submitForm(registerForm.value)">
         <div class="row">
           <div class="input-field col s6">
             <input type="text" type="text" formControlName="Username" class="validate"  required>
@@ -38,6 +38,6 @@
           </div>
         </div>
       </form>
-    </div>
+      </div>
   </div>
 </div>
