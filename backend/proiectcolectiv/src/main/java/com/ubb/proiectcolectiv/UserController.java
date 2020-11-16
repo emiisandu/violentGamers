@@ -12,15 +12,21 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping("User")
-    public String createUser(@RequestParam String name){
-        userRepository.save(new User(name, "parola2"));
-        return userRepository.findByName(name) + "Succes!";
+    @PostMapping("register")
+    public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String email){
+        User user = new User(username, password, firstName, lastName, email);
+        userRepository.save(user);
+        System.out.println(user.getPassword());
+        return userRepository.findByName(username) + " Succes! ";
     }
 
-    @GetMapping("User")
+    @GetMapping("log")
     public List<User> getUsers(){
         return (List<User>) userRepository.findAll();
     }
 
+    @GetMapping("login")
+    public boolean getUser(@RequestParam String username, @RequestParam String password) {
+        return userRepository.findUserPassMatch(username, password) != null;
+    }
 }

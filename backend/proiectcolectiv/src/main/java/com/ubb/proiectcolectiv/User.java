@@ -1,51 +1,55 @@
 package com.ubb.proiectcolectiv;
 
+import com.sun.istack.NotNull;
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="user", schema = "pc")
+@Data
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
 
     @Column(name="username")
+    @NotNull
     private String username;
 
     @Column(name="password")
+    @NotNull
     private String password;
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-    public User() {
-    }
+    @Column(name="first_name")
+    @NotNull
+    private String first_name;
 
-    public int getId() {
-        return id;
-    }
+    @Column(name="last_name")
+    @NotNull
+    private String last_name;
 
-    public void setId(int id) {
+    @Column(name="email")
+    @NotNull
+    private String email;
+
+    public User(){
+
+    }
+    public User(int id, String username, String password, String first_name, String last_name, String email) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
         this.password = password;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
     }
-
+    public User(String username, String password, String first_name, String last_name, String email) {
+        this.username = username;
+        this.password = password;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+    }
 }
