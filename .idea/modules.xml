@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/backend/proiectcolectiv/proiectcolectiv.iml" filepath="$PROJECT_DIR$/backend/proiectcolectiv/proiectcolectiv.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/violentGamers.iml" filepath="$PROJECT_DIR$/.idea/violentGamers.iml" />
     </modules>
   </component>
