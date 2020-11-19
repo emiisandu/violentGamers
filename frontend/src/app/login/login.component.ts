@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {log} from "util";
 
 @Component({
   selector: 'app-login',
@@ -18,10 +19,10 @@ export class LoginComponent implements OnInit {
 
   login(): void{
     {
-      console.log('ok');
+      console.log('Login button clicked...');
       // @ts-ignore
       // tslint:disable-next-line:max-line-length
-      this.http.post('http://127.0.0.1:5000/login', 'Welcome ' + this.email + ' ' + this.password + '!', {responseType: 'text'}).subscribe(data => this.response = data);
+      this.http.get(`http://localhost:8080/user/login?username=${this.email}&password=${this.password}`, {responseType: 'text'}).subscribe(data => log(data));
     }
   }
 

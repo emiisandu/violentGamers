@@ -1,3 +1,5 @@
+package com.ubb.proiectcolectiv;
+
 import java.util.Date;
 import java.util.Objects;
 
