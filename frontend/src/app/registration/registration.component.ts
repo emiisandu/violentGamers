@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../shared/user.model";
-import {NgForm} from '@angular/forms';
+import {FormGroup, NgForm, Validators} from '@angular/forms';
 import {RegisterService} from './register.service';
 import { FormBuilder } from '@angular/forms';
 
@@ -15,6 +15,7 @@ export class RegistrationComponent implements OnInit{
     title = 'registration';
 
     user: User;
+    form: FormGroup;
     registerForm;
     emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
@@ -23,17 +24,23 @@ export class RegistrationComponent implements OnInit{
       private formBuilder: FormBuilder,
       ) {
       this.registerForm = this.formBuilder.group({
-        Username: '',
+        UserName: '',
         Password: '',
         Email: '',
         Lastname: '',
         Firstname:''
       });
-      this.user = new User();
     }
 
     ngOnInit(){
-      this.resetForm();
+      // this.resetForm();
+      this.form = this.formBuilder.group({
+        Firstname: ['', Validators.required],
+        Lastname: ['', Validators.required],
+        UserName: ['', Validators.required],
+        Email: ['', Validators.required],
+        Password: ['', [Validators.required, Validators.minLength(6)]]
+      });
     }
 
     resetForm(form?:NgForm){
@@ -50,8 +57,8 @@ export class RegistrationComponent implements OnInit{
     }
 
     submitForm(customerData){
-
-      this.registerService.callPost(this.user).subscribe(
+      console.log(this.form.value);
+      this.registerService.callPost(this.form.value).subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
       );

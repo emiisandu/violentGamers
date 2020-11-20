@@ -16,6 +16,7 @@ public class UserController {
 
     @PostMapping("register")
     public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String email){
+        System.out.println(username);
         User user = new User(username, password, firstName, lastName, email);
         userRepository.save(user);
         System.out.println(user.getPassword());
