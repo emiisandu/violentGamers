@@ -10,6 +10,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+import { UserSkillsComponent } from './user-skills/user-skills.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
     HomeComponent,
     LoginComponent,
     UserprofileComponent,
+    UserSkillsComponent,
   ],
   imports: [
     BrowserModule,
