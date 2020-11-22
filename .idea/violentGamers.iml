@@ -3,8 +3,10 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/frontend/dist" />
-      <excludeFolder url="file://$MODULE_DIR$/frontend/tmp" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/proiectcolectiv/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/proiectcolectiv/.mvn/wrapper" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/proiectcolectiv/src/test/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="15" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />

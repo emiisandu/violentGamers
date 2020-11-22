@@ -82,7 +82,11 @@ import javax.persistence.*;
 //}
 
 @Entity
+<<<<<<< Updated upstream
 @Table(name = "\"skill-uri\"", schema = "pc")
+=======
+@Table(name = "skill-uri", schema = "pc")
+>>>>>>> Stashed changes
 public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

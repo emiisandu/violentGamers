@@ -1,5 +1,6 @@
 package com.ubb.proiectcolectiv;
 
+<<<<<<< Updated upstream
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -7,6 +8,13 @@ import javax.persistence.*;
 @Entity
 @IdClass(UserSkillsId.class)
 @Table(name = "user_skills", schema = "pc")
+=======
+import javax.persistence.*;
+
+@Entity
+@Table(name = "user_skills", schema = "pc")
+
+>>>>>>> Stashed changes
 public class UserSkillsEntry {
     @Id
     @Column(name="user_id")
@@ -16,6 +24,7 @@ public class UserSkillsEntry {
     @Column(name="skill_id")
     private int skillId;
 
+<<<<<<< Updated upstream
     @Column(name = "\"knowledgeLvl\"")
     private String knowledgeLvl;
 
@@ -35,4 +44,11 @@ public class UserSkillsEntry {
     }
 
     public UserSkillsEntry(){ }
+=======
+    @Column(name="knowledgeLvl")
+    private String knowledgeLvl;
+
+    @Column(name="experience")
+    private String experience;
+>>>>>>> Stashed changes
 }
