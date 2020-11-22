@@ -1,1 +1,54 @@
-<p>user-skills works!</p>
+<h4>Select your skills</h4>
+<mat-form-field appearance="fill" [(value)]="selected">
+  <mat-label>Category</mat-label>
+  <mat-select [formControl]="categoryControl" multiple>
+    <mat-option value="other">-- Other --</mat-option>
+    <mat-optgroup *ngFor="let group of categoryGroups" [label]="group.name"
+                  [disabled]="group.disabled">
+      <mat-option *ngFor="let category of group.category" [value]="category.value">
+        {{category.viewValue}}
+      </mat-option>
+    </mat-optgroup>
+  </mat-select>
+  <mat-label>Other</mat-label>
+  <textarea matInput ></textarea>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Select your experinece:</mat-label>
+  <mat-select [formControl]="experienceControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let experience of experience" [value]="experience">
+      {{experience.name}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="experienceControl.hasError('required')">Please choose your experience</mat-error>
+  <mat-hint>{{experienceControl.value?.display}}</mat-hint>
+</mat-form-field>
+
+<h4>Select your skills</h4>
+<mat-form-field appearance="fill" [(value)]="selected">
+  <mat-label>Category</mat-label>
+  <mat-select [formControl]="categoryControl" multiple>
+    <mat-option value="other">-- Other --</mat-option>
+    <mat-optgroup *ngFor="let group of categoryGroups" [label]="group.name"
+                  [disabled]="group.disabled">
+      <mat-option *ngFor="let category of group.category" [value]="category.value">
+        {{category.viewValue}}
+      </mat-option>
+    </mat-optgroup>
+  </mat-select>
+  <mat-label>Other</mat-label>
+  <textarea matInput></textarea>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Select your experinece:</mat-label>
+  <mat-select [formControl]="experienceControl" required>
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let experience of experience" [value]="experience">
+      {{experience.name}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="experienceControl.hasError('required')">Please choose your experience</mat-error>
+  <mat-hint>{{experienceControl.value?.display}}</mat-hint>
+</mat-form-field>
+
