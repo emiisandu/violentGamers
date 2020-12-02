@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUserEdit} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-userprofile',
@@ -8,6 +11,10 @@ import { Component, OnInit } from '@angular/core';
 export class UserprofileComponent implements OnInit {
 
   constructor() { }
+
+  faHome = faHome;
+  faUserEdit = faUserEdit;
+  faSignOut = faSignOutAlt;
 
   ngOnInit(): void {
   }
