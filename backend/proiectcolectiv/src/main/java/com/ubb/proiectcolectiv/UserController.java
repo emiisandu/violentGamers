@@ -15,13 +15,20 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping("register")
-    public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String email){
-        System.out.println(username);
-        User user = new User(username, password, firstName, lastName, email);
+    public String createUser(@RequestBody User user){
         userRepository.save(user);
-        System.out.println(user.getPassword());
-        return userRepository.findByName(username) + " Succes! ";
+        return userRepository.findByName(user.getUsername()) + " Succes! ";
     }
+
+//    @PostMapping("register")
+//    //cu @RequestBody
+//    public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String email){
+//        System.out.println(username);
+//        User user = new User(username, password, firstName, lastName, email);
+//        userRepository.save(user);
+//        System.out.println(user.getPassword());
+//        return userRepository.findByName(username) + " Succes! ";
+//    }
 
     @GetMapping("log")
     public List<User> getUsers(){
@@ -29,7 +36,7 @@ public class UserController {
     }
 
     @GetMapping("login")
-    public boolean getUser(@RequestParam String username, @RequestParam String password) {
-        return userRepository.findUserPassMatch(username, password) != null;
+    public boolean getUser(@RequestParam String email, @RequestParam String password) {
+        return userRepository.findDistinctByEmailAndPassword(email, password) != null;
     }
 }

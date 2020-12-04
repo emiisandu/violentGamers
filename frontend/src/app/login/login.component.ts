@@ -20,9 +20,7 @@ export class LoginComponent implements OnInit {
   login(): void{
     {
       console.log('Login button clicked...');
-      // @ts-ignore
-      // tslint:disable-next-line:max-line-length
-      this.http.get(`http://localhost:8080/user/login?username=${this.email}&password=${this.password}`, {responseType: 'text'}).subscribe(data => log(data));
+      this.http.get(`http://localhost:8080/user/login?email=${this.email}&password=${this.password}`, {responseType: 'text'}).subscribe(data => log(data));
     }
   }
 

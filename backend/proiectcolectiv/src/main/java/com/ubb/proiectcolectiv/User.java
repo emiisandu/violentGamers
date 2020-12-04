@@ -37,6 +37,10 @@ public class User {
     public User(){
 
     }
+    public User(String email, String password){
+        this.email = email;
+        this.password = password;
+    }
     public User(int id, String username, String password, String first_name, String last_name, String email) {
         this.id = id;
         this.username = username;

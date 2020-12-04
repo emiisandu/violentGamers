@@ -12,6 +12,6 @@ public interface UserRepository extends CrudRepository<User, Integer> {
     @Query("SELECT DISTINCT username, password FROM User U WHERE U.username = :name AND U.password= :password")
     String findUserPassMatch(String name, String password);
 
-    //Easier:
-    //User findByUsernameAndPassword(String username, String password);
+    User findDistinctByEmailAndPassword(String email, String password);
+
 }
