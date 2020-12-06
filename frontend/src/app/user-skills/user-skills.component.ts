@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {FormControl, Validators} from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 
+
 interface Category {
   value: string;
   viewValue: string;
@@ -20,19 +21,13 @@ interface CategoryGroup {
   selected?: string;
   category: Category[];
 }
-
 @Component({
   selector: 'app-user-skills',
   templateUrl: './user-skills.component.html',
   styleUrls: ['./user-skills.component.css']
 })
-export class UserSkillsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class UserSkillsComponent{
   selected = 'other';
   categoryControl = new FormControl();
   categoryGroups: CategoryGroup[] = [
@@ -61,5 +56,5 @@ export class UserSkillsComponent implements OnInit {
     {name: 'Beginner', display: 'Beginner'},
     {name: 'No experience', display: 'Noob'},
   ];
-
 }
+

@@ -11,11 +11,15 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { UserSkillsComponent } from './user-skills/user-skills.component';
+<<<<<<< Updated upstream
 import { MatSliderModule } from '@angular/material/slider';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatLabel} from "@angular/material/form-field";
 import {MatOptionModule} from "@angular/material/core";
 
+=======
+import {MatInputModule} from "@angular/material/input";
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -33,10 +37,14 @@ import {MatOptionModule} from "@angular/material/core";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+<<<<<<< Updated upstream
     NoopAnimationsModule,
     MatSliderModule,
     MatFormFieldModule,
     MatOptionModule
+=======
+    MatInputModule
+>>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]
