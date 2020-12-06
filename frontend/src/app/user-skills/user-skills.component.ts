@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {FormControl, Validators} from '@angular/forms';
+import { MatSliderModule } from '@angular/material/slider';
 
 interface Category {
   value: string;
