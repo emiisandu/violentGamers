@@ -3,6 +3,8 @@ package com.ubb.proiectcolectiv;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -37,6 +39,13 @@ public class UserController {
 
     @GetMapping("login")
     public boolean getUser(@RequestParam String email, @RequestParam String password) {
+        System.out.println("Login reached!");
         return userRepository.findDistinctByEmailAndPassword(email, password) != null;
+    }
+    @GetMapping("getNameByEmail")
+    public String getName(@RequestParam String email) {
+        System.out.println("Get name reached!");
+        System.out.println(userRepository.findDistinctByEmail(email));
+        return userRepository.findDistinctByEmail(email);
     }
 }

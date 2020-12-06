@@ -9,6 +9,7 @@ import {UserprofileComponent} from "./userprofile/userprofile.component";
 const routes: Routes = [
   { path: 'registration', component:RegistrationComponent, pathMatch: 'full'},
   { path : 'UserProfile', component : UserprofileComponent },
+  {path: 'UserProfile/:name', component: UserprofileComponent },
   { path: 'login', component:LoginComponent},
   { path: 'home', component:HomeComponent},
   { path:'**', redirectTo:'home' }
