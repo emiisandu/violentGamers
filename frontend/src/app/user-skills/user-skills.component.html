@@ -26,7 +26,7 @@
           </mat-select>
         </mat-form-field>
 
-        <button style="margin:20px" mat-raised-button>Submit</button>
+        <button style="margin:20px" (click)="submitChosenSkills()" mat-raised-button>Submit</button>
         {{selectedValue}}
       </div>
 
@@ -40,7 +40,7 @@
           <mat-label>Skill:</mat-label>
           <input [(ngModel)]="personalSkill" matInput >
         </mat-form-field>
-        <button style="margin:20px" mat-raised-button>Submit</button>
+        <button style="margin:20px" (click)="submitPersonalSkill()" mat-raised-button>Submit</button>
         {{personalSkill}}
       </div>
     </div>
