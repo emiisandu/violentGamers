@@ -5,12 +5,14 @@ import {AppComponent} from "./app.component";
 import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
 import {UserprofileComponent} from "./userprofile/userprofile.component";
+import {UserSkillsComponent} from "./user-skills/user-skills.component";
 
 const routes: Routes = [
   { path: 'registration', component:RegistrationComponent, pathMatch: 'full'},
   { path : 'UserProfile', component : UserprofileComponent },
   {path: 'UserProfile/:name', component: UserprofileComponent },
   { path: 'login', component:LoginComponent},
+  { path: 'userskills', component:UserSkillsComponent},
   { path: 'home', component:HomeComponent},
   { path:'**', redirectTo:'home' }
 ];

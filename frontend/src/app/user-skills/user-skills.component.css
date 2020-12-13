@@ -1,0 +1,25 @@
+.content, .form-div, mat-grid-tile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+mat-grid-list {
+  display: flex;
+  justify-content: center;
+}
+
+.form-div {
+  width: 100%;
+}
+button {
+  margin: 30px;
+}
+mat-grid-tile {
+  background-color: #ff5847;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline{
+  color: white;
+}

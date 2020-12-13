@@ -1,0 +1,50 @@
+<div class="content">
+  <div class="mat-display-2">Add a skill: </div>
+</div>
+
+<mat-grid-list cols="2" rowHeight="fit" style="height:500px" gutterSize="0px">
+
+  <mat-grid-tile>
+    <div class="content">
+      <div class="mat-title">Choose your skills from our list:  </div>
+
+      <div class="form-div">
+        <mat-form-field appearance="fill">
+          <mat-label>Category</mat-label>
+
+          <mat-select [(value)]="selectedValue" multiple>
+            <mat-optgroup label="Programming Skills">
+              <mat-option value="Java">Java</mat-option>
+              <mat-option value="C++">C++</mat-option>
+            </mat-optgroup>
+
+            <mat-optgroup label="Social Skills">
+              <mat-option value="Work ethic">Work ethic</mat-option>
+              <mat-option value="Relationship management">Relationship management</mat-option>
+              <mat-option value="Leadership">Leadership</mat-option>
+            </mat-optgroup>
+          </mat-select>
+        </mat-form-field>
+
+        <button style="margin:20px" mat-raised-button>Submit</button>
+        {{selectedValue}}
+      </div>
+
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="content">
+      <div class="mat-title"> ...or add a personal one! </div>
+      <div class="form-div">
+        <mat-form-field floatLabel="auto" appearance="outline" color="white">
+          <mat-label>Skill:</mat-label>
+          <input [(ngModel)]="personalSkill" matInput >
+        </mat-form-field>
+        <button style="margin:20px" mat-raised-button>Submit</button>
+        {{personalSkill}}
+      </div>
+    </div>
+  </mat-grid-tile>
+
+</mat-grid-list>
+

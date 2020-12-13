@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 div.sm-jumbotron {
   margin: 0px;
   padding: 2rem;
@@ -24,3 +25,9 @@ input.ng-invalid.ng-dirty {
   border-bottom-color: red !important;
   box-shadow: 0 1px 0 0 red !important;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

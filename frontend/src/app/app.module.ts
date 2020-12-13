@@ -12,6 +12,10 @@ import { LoginComponent } from './login/login.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import {ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot} from "@angular/router";
 import {User} from "./shared/user.model";
+import { UserSkillsComponent } from './user-skills/user-skills.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MaterialModule} from "./material/material.module";
+
 
 @NgModule({
   declarations: [
@@ -21,13 +25,16 @@ import {User} from "./shared/user.model";
     HomeComponent,
     LoginComponent,
     UserprofileComponent,
+    UserSkillsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
