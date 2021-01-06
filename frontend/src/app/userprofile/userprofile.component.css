@@ -1,86 +1,41 @@
-
-html,
 body {
-  height: 100%;
+  overflow-y: initial !important;
 }
-
-body {
-  margin: 0;
-  font-family: sans-serif;
-  font-weight: 100;
-}
-
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.tableskill {
-  width: 800px;
-  border-collapse: collapse;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  border-radius: 10px;
-}
-
-th,
-td {
-  padding: 15px;
-  background-color:#ffff99;
-  color:  #1a0000;
-}
-
-th {
-  text-align: left;
-  color: #fff;
-}
-
-
-th {
-  background-color:#E63946;
-}
-
-
-.specialtable
-{
-  margin-left: 20px;
-  width: 1150px;
-  overflow: hidden;
-  border-radius: 10px;
-  border-spacing: 0 15px;
-}
-
-.specialtd
-{
-  background-color: #F1FAEE;
-
-}
-
-
-
-
-section{
-  width:100%;
-  height: 100%;
-  color: black;
-  background-color: #F1FAEE;
-  position: relative;
-}
-
-.bgcolor{
-  background-color: #E63946;
-  color: #F1FAEE;
-}
-
-
-
-
-#main {
-  width: auto;
-  height: auto;
+.example-container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}

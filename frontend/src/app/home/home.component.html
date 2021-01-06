@@ -1,11 +1,21 @@
+<mat-grid-list cols="1" rowHeight="20:1">
+  <mat-grid-tile>
 
-<div class="container">
-  <div class="center">
-    &nbsp;&nbsp; <button type="button" class="button1" routerLink="/UserProfile" routerLinkActive="active">I'M A USER</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <p>home works!</p>
-    <a routerLink="/registration" routerLinkActive="active">Register</a>
-    <br><br>
-    <a routerLink="/login" routerLinkActive="active">Login to your account</a>
-  </div>
-</div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <img src="/assets/images/MHP_Logo_RGB.svg" alt="Logo" width="150" height="180">
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <h3 class="mat-h3">Welcome to the MHP-Porsche Employee Service!</h3>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-flat-button color="primary" routerLink="/registration" routerLinkActive="active">Register</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-flat-button color="accent" routerLink="/login" routerLinkActive="active">Login</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-flat-button color="primary" routerLink="/UserProfile">User Profile</button>
+  </mat-grid-tile>
+</mat-grid-list>
 

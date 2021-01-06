@@ -1,33 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-
-div.sm-jumbotron {
-  margin: 0px;
-  padding: 2rem;
-  background-color:darkmagenta;
-  color: #fff;
+body {
+  margin: 0;
 }
 
-button.btn-submit {
-  background-color: #8811c5;
-  color: white;
-  width: 100%;
+my-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
-
-button.btn-submit:focus, button.btn-submit:hover {
-  background-color: darkmagenta;
-}
-
-div.validation-error {
-  color: red;
-}
-
-input.ng-invalid.ng-dirty {
-  border-bottom-color: red !important;
-  box-shadow: 0 1px 0 0 red !important;
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

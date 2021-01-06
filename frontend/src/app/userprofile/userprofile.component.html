@@ -1,154 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <script src="https://kit.fontawesome.com/409e84f2a2.js" crossorigin="anonymous"></script>
-  <title>Organiser's Main Page</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-
-  <style>
-    body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-    body {font-size:16px; color:white}
-    .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
-    .w3-half img:hover{opacity:1}
-  </style>
-</head>
-
-<body>
-<router-outlet>
-  <!-- Sidebar/menu -->
-  <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding bgcolor" style="z-index:3;width:337px;font-weight:bold;" id="mySidebar"><br>
-    <div class="w3-container">
-      <div style="text-align: center;"><span><img src="assets/images/maramoo.png" alt="Logo" width="150" height="150" ></span></div>
-      <br>
-      <div style="text-align: center">Welcome, <span class="square"><u>{{name}}</u></span>!</div>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item>Home</a>
+      <a mat-list-item>Edit Profile</a>
+      <a routerLink="/userskills" mat-list-item>Edit Skills</a>
+      <a mat-list-item>Log Out</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="text-align: center;"><span><img src="assets/images/maramoo.png" alt="Logo" width="150"
+                                                height="150"></span></div>
+    <h1 style="text-align: center;" class="mat-h1">John Doe</h1>
+    <div style="text-align: center;">
+      <h4 class="mat-h4">Junior Dev 🞄 Central Europe 🞄 Romania </h4>
     </div>
-    <div class="w3-bar-block">
-      <h3></h3>
-      <h4></h4>
-      <br><br>
-      <a routerLink="/organisers" class="w3-bar-item w3-button w3-hover-white" style="font-size: 25px"><!--<fa-icon [icon]="faHome"></fa-icon>-->  Home</a>
-      <br>
-      <a href="#eventsAll" onclick="" class="w3-bar-item w3-button w3-hover-white" style="font-size: 25px"><!--<fa-icon [icon]="faUserEdit"></fa-icon>--> Edit Profile</a>
-      <br>
-      <a href="userskills" onclick="" class="w3-bar-item w3-button w3-hover-white" style="font-size: 25px"><!--<fa-icon [icon]="faUserEdit"></fa-icon>--> Add Skills</a>
-      <br>
-      <a routerLink="/Home" onclick="" class="w3-bar-item w3-button w3-hover-white" style="font-size: 25px"><!--<fa-icon [icon]="faSignOut"></fa-icon>-->  Log out</a>
-    </div>
-  </nav>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="level">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Level</th>
+        <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+      </ng-container>
 
-  <section>
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
 
-      <!-- Header -->
-      <div class="w3-container" id="showcase" >
-        <div style="margin-left: 180px; margin-top: 20px">
-          <div>
-            <ul>
-              <li><b>Job level:</b> junior dev</li>
-              <li><b>Region:</b> Central Europe</li>
-              <li><b>Country:</b> Romania</li>
-            </ul>
-          </div>
-          <table class="tableskill">
-            <thead>
-            <tr>
-              <th>Skill</th>
-              <th>Description</th>
-              <th>Knowledge Level</th>
-              <th>Experience</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>Skill 1</td>
-              <td>Description 1</td>
-              <td>Level 1</td>
-              <td>Experience 1</td>
-            </tr>
-            <tr>
-              <td>Skill 2</td>
-              <td>Description 2</td>
-              <td>Level 2</td>
-              <td>Experience 2</td>
-            </tr>
-            <tr>
-              <td>Skill 3</td>
-              <td>Description 3</td>
-              <td>Level 3</td>
-              <td>Experience 3</td>
-            </tr>
-            <tr>
-              <td>Skill 4</td>
-              <td>Description 4</td>
-              <td>Level 4</td>
-              <td>Experience 4</td>
-            </tr>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="experience">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> XP</th>
+        <td mat-cell *matCellDef="let element"> {{element.experience}} </td>
+      </ng-container>
 
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Description</th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
 
-      <br><br><br><br>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 
-      <table class="specialtable">
-        <tr>
-          <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
-          <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
-          <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
-          <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
-        </tr>
-        <tr>
-          <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
-          <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
-          <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
-          <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
-        </tr>
-      </table>
+    <p></p>
+    <table class="specialtable">
+      <tr>
+        <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
+        <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
+        <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
+        <td class="specialtd" style="padding:0 15px 0 15px;"><img src="assets/images/java.jpg" alt="Mountains" style="width:100%"></td>
+      </tr>
+    </table>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-      <!-- Photo grid (modal) -->
-      <div class="w3-row-padding">
-        <div class="container" >
-
-        </div>
-
-      </div>
-      <br>
-
-
-      <!-- Modal for full size images on click-->
-      <div id="modal01" class="w3-modal w3-black" >
-        <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-          <img id="img01" class="w3-image">
-          <p id="caption"></p>
-        </div>
-      </div>
-
-      <!-- Services -->
-      <div class="w3-container" id="services" >
-
-      </div>
-
-      <div class="w3-container" id="servicess" style="margin-top: 720px">
-
-      </div>
-
-      <!-- End page content -->
-    </div>
-  </section>
-</router-outlet>
-</body>
-</html>
-
-
-<!-- npm install @fortawesome/fontawesome-svg-core
-npm install @fortawesome/free-brands-svg-icons
-npm install @fortawesome/free-regular-svg-icons
-npm install @fortawesome/free-solid-svg-icons
-npm install @fortawesome/angular-fontawesome-->

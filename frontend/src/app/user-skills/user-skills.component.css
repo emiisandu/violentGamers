@@ -16,9 +16,9 @@ mat-grid-list {
 button {
   margin: 30px;
 }
-mat-grid-tile {
-  background-color: #ff5847;
-}
+/*mat-grid-tile {*/
+/*  background-color: #ff5847;*/
+/*}*/
 
 .mat-form-field-appearance-outline .mat-form-field-outline{
   color: white;

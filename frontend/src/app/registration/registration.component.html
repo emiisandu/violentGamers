@@ -1,43 +1,42 @@
-<div class="row">
-  <div class="col s8 offset-s2">
-    <div class="card">
-      <div class="sm-jumbotron center-align">
-        <h2> Registration </h2>
+<mat-grid-list cols="1" rowHeight="3:1">
+  <mat-grid-tile>
+    <form class="col s12 white" class="card-content" [formGroup]="form" #UserRegistrationForm="ngForm"
+          autocomplete="off"
+          (ngSubmit)="submitForm(registerForm.value)">
+
+      <h1 class="mat-h1">Register</h1>
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <input type="text" type="text" formControlName="UserName" class="validate" required matInput>
+          <mat-label data-error="Required Field">Username</mat-label>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" class="validate" formControlName="Password" required minlength="3" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>First Name</mat-label>
+          <input type="text" formControlName="Firstname" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input type="text" formControlName="Lastname" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input type="text" class="validate" formControlName="Email" [pattern]="emailPattern" matInput>
+        </mat-form-field>
       </div>
-      <form class="col s12 white" class="card-content" [formGroup]="form" #UserRegistrationForm="ngForm" autocomplete="off" (ngSubmit)="submitForm(registerForm.value)">
-        <div class="row">
-          <div class="input-field col s6">
-            <input type="text" type="text" formControlName="UserName" class="validate"  required>
-            <label data-error="Required Field">Username</label>
-          </div>
 
-          <div class="input-field col s6">
-            <input type="password" class="validate" formControlName="Password"  required minlength="3">
-            <label >Password</label>
-          </div>
-
-          <div class="input-field col s6">
-            <input type="text" formControlName="Firstname" >
-            <label>First Name</label>
-          </div>
-
-          <div class="input-field col s6">
-            <input type="text" formControlName="Lastname" >
-            <label>Last Name</label>
-          </div>
-
-          <div class="input-field col s6">
-            <input type="text" class="validate" formControlName="Email" [pattern]="emailPattern">
-            <label>Email</label>
-          </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button mat-flat-button color="primary" [disabled]="!UserRegistrationForm.valid" type="submit">Register</button>
         </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <button class="btn-large btn-submit" [disabled]="!UserRegistrationForm.valid" type="submit" >Register</button>
-          </div>
-        </div>
-      </form>
       </div>
-  </div>
-</div>
+    </form>
+  </mat-grid-tile>
+</mat-grid-list>

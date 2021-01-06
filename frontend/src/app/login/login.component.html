@@ -1,32 +1,20 @@
-<div class="row">
-  <div class="col s12 m8 l4 offset-m2 offset-l4">
-    <div class="card">
-      <h1 style="text-align: center">{{response}}</h1>
-      <div class="sm-jumbotron center-align">
-        <h3>Login</h3>
-      </div>
-      <div class="card-content">
-        <div class="form-field">
-          <label for="email">E-Mail</label>
-          <input type="text" id="email" name="email" [(ngModel)]="email">
-        </div><br>
+<mat-grid-list cols="1" rowHeight="4:1">
+  <mat-grid-tile>
+    <form class="example-form">
+      <h1 class="mat-h1">Login</h1>
+      <mat-form-field class="example-full-width">
+        <mat-label>E-Mail</mat-label>
+        <input [(ngModel)]="email" name="login_email_form" matInput  >
+      </mat-form-field>
 
-        <div class="form-field">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" [(ngModel)]="password">
-        </div><br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input [(ngModel)]="password" name="login_password_form" type="password" matInput>
+      </mat-form-field>
 
-        <div class="form-field">
-          <input type="checkbox" id="remem">
-          <label for="remem">Rememeber me</label>
-
-        </div><br>
-
-        <div class="form-field">
-          <button class="btn-large btn-submit" style="width:100%;" (click)="login()">Login</button>
-        </div><br>
-      </div>
-
-    </div>
-  </div>
-</div>
+      <mat-checkbox class="example-margin" id="remem">Rememeber me!</mat-checkbox>
+      <p></p>
+      <button mat-flat-button color="primary"  (click)="login()">Login</button>
+    </form>
+  </mat-grid-tile>
+</mat-grid-list>
