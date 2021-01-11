@@ -77,10 +77,8 @@ import javax.persistence.*;
 //                ", description='" + description + '\'' +
 //                ", knowledgeLevel='" + knowledgeLevel + '\'' +
 //                ", experience='" + experience + '\'' +
-//                '}';
-//    }
+//                '}';}
 //}
-
 @Entity
 @Table(name = "skill-uri", schema = "pc")
 public class Skill {

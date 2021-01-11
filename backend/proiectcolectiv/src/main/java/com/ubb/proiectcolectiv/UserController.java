@@ -21,7 +21,6 @@ public class UserController {
         userRepository.save(user);
         return userRepository.findByName(user.getUsername()) + " Succes! ";
     }
-
 //    @PostMapping("register")
 //    //cu @RequestBody
 //    public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String email){
@@ -39,12 +38,12 @@ public class UserController {
 
     @GetMapping("login")
     public boolean getUser(@RequestParam String email, @RequestParam String password) {
-        System.out.println("Login reached!");
+        System.out.println("Login Reached!");
         return userRepository.findDistinctByEmailAndPassword(email, password) != null;
     }
     @GetMapping("getNameByEmail")
     public String getName(@RequestParam String email) {
-        System.out.println("Get name reached!");
+        System.out.println("Get Name Reached!");
         System.out.println(userRepository.findDistinctByEmail(email));
         return userRepository.findDistinctByEmail(email);
     }
