@@ -31,7 +31,7 @@ public interface SkillRepository  extends CrudRepository<Skill, Long> {
     Iterable<Skill> findAllById(Iterable<Long> iterable);
 
     @Override
-    
+
     long count();
 
     @Override
